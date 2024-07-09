@@ -5,12 +5,28 @@ the elements show up in the string as values.
 */
 
 function countElements(arr) {
-  // Your code here 
+  let obj = {};
+
+
+  for(let element of arr){
+    let frequencyOfElement = (arr, element) => {
+      let frequency = 0;
+
+      for(let i = 0; i < arr.length; i++){
+        if(element === arr[i]){
+          frequency++;
+        }
+      }
+      return frequency;
+    };
+    obj[element] = frequencyOfElement(arr, element);
+  }
+  return obj;
 }
 
-// console.log(countElements(
-//   ['app', 1, 2, 'app', 2, 2]
-// )); // => { app: 2, 1: 1, 2: 3 }
+console.log(countElements(
+  ['app', 1, 2, 'app', 2, 2]
+)); // => { app: 2, 1: 1, 2: 3 }
 
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/

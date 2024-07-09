@@ -5,15 +5,25 @@ is formatted such that the first element is the key and the second element is
 the value.
 */
 
-// Your code here 
+function objectToArray(obj){
+  let arr = [];
+  let subArr = [];
 
-// let bootcamp = {
-//   name: "App Academy",
-//   color: "Red",
-//   population: 120
-// };
-// console.log(objectToArray(bootcamp));
-// //=> [['name', 'App Academy'], ['color', 'Red'], ['population', 120]]
+  for(let key in obj){
+    subArr.push(key, obj[key]);
+    arr.push(subArr);
+    subArr = [];
+  }
+  return arr;
+}
+
+let bootcamp = {
+  name: "App Academy",
+  color: "Red",
+  population: 120
+};
+console.log(objectToArray(bootcamp));
+//=> [['name', 'App Academy'], ['color', 'Red'], ['population', 120]]
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 

@@ -9,7 +9,11 @@ object that are interchangeable. Don't use Object.keys().
 
 function getVowelKeys(obj) {
   let vowelKeys = [];
-  let keys = Object.keys(obj);
+  let keys = [];
+  //let keys = Object.keys(obj);
+  for(let key in obj){
+    keys.push(key);
+  }
   for (let key of keys) {
     if (hasVowels(key)) vowelKeys.push(key);
   }
@@ -24,14 +28,14 @@ function hasVowels(str) {
   return false;
 }
 
-// const locationCount = {
-//   hotel: 6,
-//   gym: 10,
-//   ATMs: 2,
-//   train: 20,
-// }
-// console.log(getVowelKeys(locationCount));
-// //=> ['hotel', 'train']
+const locationCount = {
+  hotel: 6,
+  gym: 10,
+  ATMs: 2,
+  train: 20,
+}
+console.log(getVowelKeys(locationCount));
+//=> ['hotel', 'train']
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 
